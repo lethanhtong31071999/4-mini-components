@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fd;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 500px;
+    margin: 20px;
+}
+
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #3e57db;
+    color: white;
+
+}
+
+.header .title {
+    letter-spacing: 3px;
+    font-size: 2rem;
+}
+
+.header .subttile {
+    display: inline-block;
+    margin: 5px 0 20px 0;
+    opacity: 0.8;
+}
+
+.header #filter {
+    padding: 10px 15px;
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+}
+
+.header #filter::placeholder {
+    color: whitesmoke
+}
+
+.header #filter:focus {
+    outline: none;
+}
+
+.user-list {
+    list-style: none;
+    background-color: white;
+    height: 600px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.user-list .user-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+}
+
+.user-list .user-item.hide {
+    display: none;
+}
+
+
+.user-item img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+}
+
+.user-item .user-info {
+    margin-left: 15px;
+}
+
+.user-item .user-info h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.user-item .user-info p {
+    font-size: 16px;
+}
+
+.user-list a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #3e57db;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px 0;
+}
