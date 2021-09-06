@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+
+  width: 1200px;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Spinner */
+.spinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.spinner > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  border: 8px solid transparent;
+}
+
+.spinner > div:nth-child(1) {
+  border-top-color: #f44336;
+  animation: FirstSpinner 1.2s linear infinite;
+}
+
+.spinner > div:nth-child(2) {
+  border-bottom-color: #1e88e5;
+  animation: SecondSpinner 1.2s linear infinite;
+}
+
+@keyframes FirstSpinner {
+  0% {
+    border-width: 8px;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-width: 2px;
+    transform: rotate(180deg);
+  }
+  100% {
+    border-width: 8px;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes SecondSpinner {
+  0% {
+    border-width: 2px;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-width: 8px;
+    transform: rotate(180deg);
+  }
+  100% {
+    border-width: 2px;
+    transform: rotate(360deg);
+  }
+}
+
+.spinner::after,
+.spinner::before {
+  display: block;
+  content: "";
+  height: 50%;
+  width: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  border: 4px solid transparent;
+
+  transform: translate(-50%, -50%);
+}
+
+.spinner::before {
+  border-radius: 50%;
+  border-top-color: #1e88e5;
+
+  animation: FirstSpinnerChild 1.2s linear infinite;
+}
+
+.spinner::after {
+  border-radius: 50%;
+  border-bottom-color: #f44336;
+
+  animation: SecondSpinnerChild 1.2s linear infinite;
+}
+
+@keyframes FirstSpinnerChild {
+  0% {
+    border-width: 4px;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  50% {
+    border-width: 2px;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    border-width: 4px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes SecondSpinnerChild {
+  0% {
+    border-width: 2px;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  50% {
+    border-width: 4px;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    border-width: 2px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
